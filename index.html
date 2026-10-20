@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -151,7 +151,7 @@
     50% { transform: scaleX(1.4); opacity: 1; }
   }
 
-  /* === PLAN SLIDER (çok katlı) === */
+  /* === PLAN SLIDER (multi-floor) === */
   .plan-slider { position: relative; width: 100%; margin-left: auto; }
   .plan-viewport { position: relative; width: 100%; }
   .plan-slide { display: none; }
@@ -682,27 +682,27 @@
       Interior · Architecture · Design
     </div>
   </div>
-  <div class="header-meta"><span>C4 NURHAK VER 3</span> &nbsp;·&nbsp; SUNUM 2026</div>
+  <div class="header-meta"><span>C4 NURHAK VER 3</span> &nbsp;·&nbsp; PRESENTATION 2026</div>
 </header>
 
 <section class="hero" id="hero">
   <div class="hero-side">
-    <div class="hero-tag">Konsept Sunum</div>
+    <div class="hero-tag">Concept Presentation</div>
     <h1 class="hero-title"><em>C4 Nurhak Ver 3</em></h1>
-    <p class="hero-sub">Bilinçli tasarlanmış mekanlardan oluşan bir konut. Her mekanı kat planı üzerinden keşfedin — her alan kendi atmosferine, malzemesine ve ışığına açılır.</p>
+    <p class="hero-sub">A residence of thoughtfully designed spaces. Explore each space through the floor plan — every area opens onto its own atmosphere, materials and light.</p>
     <div class="hero-instructions">
-      <span>Oda adını görmek için noktaların üzerine gelin</span>
-      <span>Galeriyi açmak için herhangi bir noktaya tıklayın</span>
-      <span>Ya da tüm mekanlar için aşağı kaydırın</span>
+      <span>Hover over the points to see the room name</span>
+      <span>Click any point to open its gallery</span>
+      <span>Or scroll down to see all spaces</span>
     </div>
-    <div class="scroll-cue">KEŞFET</div>
+    <div class="scroll-cue">EXPLORE</div>
   </div>
   <div class="plan-slider" id="planSlider">
     <div class="plan-viewport" id="planViewport"></div>
     <div class="plan-nav" id="planNav">
-      <button class="plan-arrow" id="planPrev" aria-label="Önceki kat">‹</button>
+      <button class="plan-arrow" id="planPrev" aria-label="Previous floor">‹</button>
       <div class="plan-floor-label" id="planFloorLabel"></div>
-      <button class="plan-arrow" id="planNext" aria-label="Sonraki kat">›</button>
+      <button class="plan-arrow" id="planNext" aria-label="Next floor">›</button>
     </div>
     <div class="plan-dots" id="planDots"></div>
   </div>
@@ -710,7 +710,7 @@
 
 <section class="room-index" id="rooms">
   <div class="index-header">
-    <h2 class="index-title">Tüm <em>Mekanlar</em></h2>
+    <h2 class="index-title">All <em>Spaces</em></h2>
     <div class="index-meta" id="indexMeta"></div>
   </div>
   <div class="room-grid" id="roomGrid"></div>
@@ -719,7 +719,7 @@
 <footer class="site-footer">
   <img src="images/logo.png" alt="My Home Architecture" />
   <div class="footer-tag"><em>C4 Nurhak Ver 3</em></div>
-  <div class="footer-tag" style="font-size: 0.95rem; opacity: 0.7;">Konsept Sunum 2026</div>
+  <div class="footer-tag" style="font-size: 0.95rem; opacity: 0.7;">Concept Presentation 2026</div>
   <div class="footer-meta">My Home Architecture &nbsp;·&nbsp; Interior · Architecture · Design</div>
 </footer>
 
@@ -727,16 +727,16 @@
   <div class="modal-inner">
     <div class="modal-header">
       <div class="modal-title-block">
-        <div class="modal-eyebrow" id="modalEyebrow">Mekan</div>
-        <h3 class="modal-title" id="modalTitle">Oda Adı</h3>
+        <div class="modal-eyebrow" id="modalEyebrow">Space</div>
+        <h3 class="modal-title" id="modalTitle">Room Name</h3>
       </div>
-      <button class="modal-close" id="modalClose" aria-label="Kapat">✕</button>
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
     </div>
     <div class="modal-content">
       <aside class="modal-sidebar">
         <div class="modal-plan" id="modalPlanWrap">
-          <img id="modalPlan" src="" alt="Oda planı" />
-          <div class="modal-plan-label">KAT PLANI</div>
+          <img id="modalPlan" src="" alt="Room plan" />
+          <div class="modal-plan-label">FLOOR PLAN</div>
         </div>
         <div class="modal-tabs" id="modalTabs"></div>
       </aside>
@@ -754,10 +754,10 @@
 </div>
 
 <script>
-// === KAT VERİSİ (generate.py tarafından dolduruldu) ===
-const FLOORS = [{"name": "Bodrum Kat", "plan": "images/bodrum_kat/kat_plani.jpg", "rooms": ["bodrum_kat__1_giris", "bodrum_kat__2_mutfak", "bodrum_kat__3_sinema_odasi", "bodrum_kat__4_spor_salonu", "bodrum_kat__5_hamam_sauna_ve_wc", "bodrum_kat__6_mescit", "bodrum_kat__7_salon", "bodrum_kat__8_suit_yatak_odasi", "bodrum_kat__9_erkek_odasi", "bodrum_kat__11_depo_ve_camasir_odasi", "bodrum_kat__12_yardimci_odasi"]}, {"name": "Zemin Kat", "plan": "images/zemin_kat/kat_plani.jpg", "rooms": ["zemin_kat__13_salon", "zemin_kat__14_misafir_yatak_odasi"]}, {"name": "1. Kat", "plan": "images/1_kat/kat_plani.jpg", "rooms": ["1_kat__15_kiz_cocuk_odasi", "1_kat__16_erkek_cocuk_odasi", "1_kat__17_ebeveyn_yatak_odasi", "1_kat__18_2_li_kiz_cocuk_odasi", "1_kat__19_merdiven_nisli_duvar"]}];
-// === ODA VERİSİ (generate.py tarafından dolduruldu) ===
-const DATA = [{"slug": "bodrum_kat__1_giris", "num": "01", "name_tr": "Giriş", "floor": 0, "plan": "images/bodrum_kat/1_giris/plan.jpg", "images": ["images/bodrum_kat/1_giris/img_01.jpeg", "images/bodrum_kat/1_giris/img_02.jpeg", "images/bodrum_kat/1_giris/img_03.png", "images/bodrum_kat/1_giris/img_04.png", "images/bodrum_kat/1_giris/img_05.png", "images/bodrum_kat/1_giris/img_06.png", "images/bodrum_kat/1_giris/img_07.png", "images/bodrum_kat/1_giris/img_08.png"], "subs": [], "beacon": {"x": 0.22, "y": 0.8206}}, {"slug": "bodrum_kat__2_mutfak", "num": "02", "name_tr": "Mutfak", "floor": 0, "plan": "images/bodrum_kat/2_mutfak/plan.jpg", "images": ["images/bodrum_kat/2_mutfak/img_01.png", "images/bodrum_kat/2_mutfak/img_02.png", "images/bodrum_kat/2_mutfak/img_03.png"], "subs": [], "beacon": {"x": 0.54, "y": 0.6507}}, {"slug": "bodrum_kat__3_sinema_odasi", "num": "03", "name_tr": "Sinema Odası", "floor": 0, "plan": "images/bodrum_kat/3_sinema_odasi/plan.jpg", "images": ["images/bodrum_kat/3_sinema_odasi/img_01.png", "images/bodrum_kat/3_sinema_odasi/img_02.png", "images/bodrum_kat/3_sinema_odasi/img_03.png"], "subs": [], "beacon": {"x": 0.37, "y": 0.6861}}, {"slug": "bodrum_kat__4_spor_salonu", "num": "04", "name_tr": "Spor Salonu", "floor": 0, "plan": "images/bodrum_kat/4_spor_salonu/plan.jpg", "images": ["images/bodrum_kat/4_spor_salonu/img_01.png"], "subs": [], "beacon": {"x": 0.3375, "y": 0.2473}}, {"slug": "bodrum_kat__5_hamam_sauna_ve_wc", "num": "05", "name_tr": "Hamam, Sauna ve WC", "floor": 0, "plan": "images/bodrum_kat/5_hamam_sauna_ve_wc/plan.jpg", "images": ["images/bodrum_kat/5_hamam_sauna_ve_wc/img_01.png", "images/bodrum_kat/5_hamam_sauna_ve_wc/img_02.png", "images/bodrum_kat/5_hamam_sauna_ve_wc/img_03.png", "images/bodrum_kat/5_hamam_sauna_ve_wc/img_04.png"], "subs": [], "beacon": {"x": 0.345, "y": 0.5587}}, {"slug": "bodrum_kat__6_mescit", "num": "06", "name_tr": "Mescit", "floor": 0, "plan": "images/bodrum_kat/6_mescit/plan.jpg", "images": ["images/bodrum_kat/6_mescit/img_01.jpg", "images/bodrum_kat/6_mescit/img_02.png"], "subs": [{"slug": "abdest_wc", "name_tr": "Abdest WC", "images": ["images/bodrum_kat/6_mescit/abdest_wc/img_01.png", "images/bodrum_kat/6_mescit/abdest_wc/img_02.png"]}], "beacon": {"x": 0.58, "y": 0.2119}}, {"slug": "bodrum_kat__7_salon", "num": "07", "name_tr": "Salon", "floor": 0, "plan": "images/bodrum_kat/7_salon/plan.jpg", "images": ["images/bodrum_kat/7_salon/img_01.png", "images/bodrum_kat/7_salon/img_02.png", "images/bodrum_kat/7_salon/img_03.png", "images/bodrum_kat/7_salon/img_04.png", "images/bodrum_kat/7_salon/img_05.png"], "subs": [], "beacon": {"x": 0.77, "y": 0.3181}}, {"slug": "bodrum_kat__8_suit_yatak_odasi", "num": "08", "name_tr": "Suit Yatak Odası", "floor": 0, "plan": "images/bodrum_kat/8_suit_yatak_odasi/plan.jpg", "images": ["images/bodrum_kat/8_suit_yatak_odasi/img_01.png", "images/bodrum_kat/8_suit_yatak_odasi/img_02.png", "images/bodrum_kat/8_suit_yatak_odasi/img_03.png", "images/bodrum_kat/8_suit_yatak_odasi/img_04.png", "images/bodrum_kat/8_suit_yatak_odasi/img_05.jpg", "images/bodrum_kat/8_suit_yatak_odasi/img_06.png"], "subs": [{"slug": "banyo", "name_tr": "Banyo", "images": ["images/bodrum_kat/8_suit_yatak_odasi/banyo/img_01.png", "images/bodrum_kat/8_suit_yatak_odasi/banyo/img_02.png"]}], "beacon": {"x": 0.79, "y": 0.7639}}, {"slug": "bodrum_kat__9_erkek_odasi", "num": "09", "name_tr": "Erkek Odası", "floor": 0, "plan": "images/bodrum_kat/9_erkek_odasi/plan.jpg", "images": ["images/bodrum_kat/9_erkek_odasi/img_01.png", "images/bodrum_kat/9_erkek_odasi/img_02.png"], "subs": [{"slug": "banyo", "name_tr": "Banyo", "images": ["images/bodrum_kat/9_erkek_odasi/banyo/img_01.png", "images/bodrum_kat/9_erkek_odasi/banyo/img_02.png"]}], "beacon": {"x": 0.4575, "y": 0.2119}}, {"slug": "bodrum_kat__11_depo_ve_camasir_odasi", "num": "10", "name_tr": "Depo ve Çamaşır Odası", "floor": 0, "plan": "images/bodrum_kat/11_depo_ve_camasir_odasi/plan.jpg", "images": ["images/bodrum_kat/11_depo_ve_camasir_odasi/img_01.png", "images/bodrum_kat/11_depo_ve_camasir_odasi/img_02.jpeg", "images/bodrum_kat/11_depo_ve_camasir_odasi/img_03.png", "images/bodrum_kat/11_depo_ve_camasir_odasi/img_04.png"], "subs": [], "beacon": {"x": 0.225, "y": 0.587}}, {"slug": "bodrum_kat__12_yardimci_odasi", "num": "11", "name_tr": "Yardımcı Odası", "floor": 0, "plan": "images/bodrum_kat/12_yardimci_odasi/plan.jpg", "images": ["images/bodrum_kat/12_yardimci_odasi/img_01.png", "images/bodrum_kat/12_yardimci_odasi/img_02.png"], "subs": [{"slug": "banyo", "name_tr": "Banyo", "images": ["images/bodrum_kat/12_yardimci_odasi/banyo/img_01.png", "images/bodrum_kat/12_yardimci_odasi/banyo/img_02.jpg"]}], "beacon": {"x": 0.225, "y": 0.2473}}, {"slug": "zemin_kat__13_salon", "num": "12", "name_tr": "Salon", "floor": 1, "plan": "images/zemin_kat/13_salon/plan.jpg", "images": ["images/zemin_kat/13_salon/img_01.png", "images/zemin_kat/13_salon/img_02.png", "images/zemin_kat/13_salon/img_03.png", "images/zemin_kat/13_salon/img_04.png"], "subs": [], "beacon": {"x": 0.68, "y": 0.6224}}, {"slug": "zemin_kat__14_misafir_yatak_odasi", "num": "13", "name_tr": "Misafir Yatak Odası", "floor": 1, "plan": "images/zemin_kat/14_misafir_yatak_odasi/plan.jpg", "images": ["images/zemin_kat/14_misafir_yatak_odasi/img_01.png", "images/zemin_kat/14_misafir_yatak_odasi/img_02.jpeg"], "subs": [], "beacon": {"x": 0.2525, "y": 0.3818}}, {"slug": "1_kat__15_kiz_cocuk_odasi", "num": "14", "name_tr": "Kız Çocuk Odası", "floor": 2, "plan": "images/1_kat/15_kiz_cocuk_odasi/plan.jpg", "images": ["images/1_kat/15_kiz_cocuk_odasi/img_01.png", "images/1_kat/15_kiz_cocuk_odasi/img_02.png"], "subs": [], "beacon": {"x": 0.1825, "y": 0.3889}}, {"slug": "1_kat__16_erkek_cocuk_odasi", "num": "15", "name_tr": "Erkek Çocuk Odası", "floor": 2, "plan": "images/1_kat/16_erkek_cocuk_odasi/plan.jpg", "images": ["images/1_kat/16_erkek_cocuk_odasi/img_01.png", "images/1_kat/16_erkek_cocuk_odasi/img_02.png"], "subs": [], "beacon": {"x": 0.4, "y": 0.3039}}, {"slug": "1_kat__17_ebeveyn_yatak_odasi", "num": "16", "name_tr": "Ebeveyn Yatak Odası", "floor": 2, "plan": "images/1_kat/17_ebeveyn_yatak_odasi/plan.jpg", "images": ["images/1_kat/17_ebeveyn_yatak_odasi/img_01.png", "images/1_kat/17_ebeveyn_yatak_odasi/img_02.jpeg", "images/1_kat/17_ebeveyn_yatak_odasi/img_03.jpeg"], "subs": [], "beacon": {"x": 0.645, "y": 0.403}}, {"slug": "1_kat__18_2_li_kiz_cocuk_odasi", "num": "17", "name_tr": "2'li Kız Çocuk Odası", "floor": 2, "plan": "images/1_kat/18_2_li_kiz_cocuk_odasi/plan.jpg", "images": ["images/1_kat/18_2_li_kiz_cocuk_odasi/img_01.png", "images/1_kat/18_2_li_kiz_cocuk_odasi/img_02.jpeg"], "subs": [], "beacon": {"x": 0.77, "y": 0.7639}}, {"slug": "1_kat__19_merdiven_nisli_duvar", "num": "18", "name_tr": "Merdiven Nişli Duvar", "floor": 2, "plan": null, "images": ["images/1_kat/19_merdiven_nisli_duvar/img_01.jpeg"], "subs": [], "beacon": {"x": 0.31, "y": 0.863}}];
+// === FLOOR DATA ===
+const FLOORS = [{"name": "Basement Floor", "plan": "images/bodrum_kat/kat_plani.jpg", "rooms": ["bodrum_kat__1_giris", "bodrum_kat__2_mutfak", "bodrum_kat__3_sinema_odasi", "bodrum_kat__4_spor_salonu", "bodrum_kat__5_hamam_sauna_ve_wc", "bodrum_kat__6_mescit", "bodrum_kat__7_salon", "bodrum_kat__8_suit_yatak_odasi", "bodrum_kat__9_erkek_odasi", "bodrum_kat__11_depo_ve_camasir_odasi", "bodrum_kat__12_yardimci_odasi"]}, {"name": "Ground Floor", "plan": "images/zemin_kat/kat_plani.jpg", "rooms": ["zemin_kat__13_salon", "zemin_kat__14_misafir_yatak_odasi"]}, {"name": "First Floor", "plan": "images/1_kat/kat_plani.jpg", "rooms": ["1_kat__15_kiz_cocuk_odasi", "1_kat__16_erkek_cocuk_odasi", "1_kat__17_ebeveyn_yatak_odasi", "1_kat__18_2_li_kiz_cocuk_odasi", "1_kat__19_merdiven_nisli_duvar"]}];
+// === ROOM DATA ===
+const DATA = [{"slug": "bodrum_kat__1_giris", "num": "01", "name_tr": "Entrance", "floor": 0, "plan": "images/bodrum_kat/1_giris/plan.jpg", "images": ["images/bodrum_kat/1_giris/img_01.jpeg", "images/bodrum_kat/1_giris/img_02.jpeg", "images/bodrum_kat/1_giris/img_03.png", "images/bodrum_kat/1_giris/img_04.png", "images/bodrum_kat/1_giris/img_05.png", "images/bodrum_kat/1_giris/img_06.png", "images/bodrum_kat/1_giris/img_07.png", "images/bodrum_kat/1_giris/img_08.png"], "subs": [], "beacon": {"x": 0.22, "y": 0.8206}}, {"slug": "bodrum_kat__2_mutfak", "num": "02", "name_tr": "Kitchen", "floor": 0, "plan": "images/bodrum_kat/2_mutfak/plan.jpg", "images": ["images/bodrum_kat/2_mutfak/img_01.png", "images/bodrum_kat/2_mutfak/img_02.png", "images/bodrum_kat/2_mutfak/img_03.png"], "subs": [], "beacon": {"x": 0.54, "y": 0.6507}}, {"slug": "bodrum_kat__3_sinema_odasi", "num": "03", "name_tr": "Cinema Room", "floor": 0, "plan": "images/bodrum_kat/3_sinema_odasi/plan.jpg", "images": ["images/bodrum_kat/3_sinema_odasi/img_01.png", "images/bodrum_kat/3_sinema_odasi/img_02.png", "images/bodrum_kat/3_sinema_odasi/img_03.png"], "subs": [], "beacon": {"x": 0.37, "y": 0.6861}}, {"slug": "bodrum_kat__4_spor_salonu", "num": "04", "name_tr": "Gym", "floor": 0, "plan": "images/bodrum_kat/4_spor_salonu/plan.jpg", "images": ["images/bodrum_kat/4_spor_salonu/img_01.png"], "subs": [], "beacon": {"x": 0.3375, "y": 0.2473}}, {"slug": "bodrum_kat__5_hamam_sauna_ve_wc", "num": "05", "name_tr": "Hammam, Sauna & WC", "floor": 0, "plan": "images/bodrum_kat/5_hamam_sauna_ve_wc/plan.jpg", "images": ["images/bodrum_kat/5_hamam_sauna_ve_wc/img_01.png", "images/bodrum_kat/5_hamam_sauna_ve_wc/img_02.png", "images/bodrum_kat/5_hamam_sauna_ve_wc/img_03.png", "images/bodrum_kat/5_hamam_sauna_ve_wc/img_04.png"], "subs": [], "beacon": {"x": 0.345, "y": 0.5587}}, {"slug": "bodrum_kat__6_mescit", "num": "06", "name_tr": "Prayer Room", "floor": 0, "plan": "images/bodrum_kat/6_mescit/plan.jpg", "images": ["images/bodrum_kat/6_mescit/img_01.jpg", "images/bodrum_kat/6_mescit/img_02.png"], "subs": [{"slug": "abdest_wc", "name_tr": "Ablution WC", "images": ["images/bodrum_kat/6_mescit/abdest_wc/img_01.png", "images/bodrum_kat/6_mescit/abdest_wc/img_02.png"]}], "beacon": {"x": 0.58, "y": 0.2119}}, {"slug": "bodrum_kat__7_salon", "num": "07", "name_tr": "Living Room", "floor": 0, "plan": "images/bodrum_kat/7_salon/plan.jpg", "images": ["images/bodrum_kat/7_salon/img_01.png", "images/bodrum_kat/7_salon/img_02.png", "images/bodrum_kat/7_salon/img_03.png", "images/bodrum_kat/7_salon/img_04.png", "images/bodrum_kat/7_salon/img_05.png"], "subs": [], "beacon": {"x": 0.77, "y": 0.3181}}, {"slug": "bodrum_kat__8_suit_yatak_odasi", "num": "08", "name_tr": "Master Suite", "floor": 0, "plan": "images/bodrum_kat/8_suit_yatak_odasi/plan.jpg", "images": ["images/bodrum_kat/8_suit_yatak_odasi/img_01.png", "images/bodrum_kat/8_suit_yatak_odasi/img_02.png", "images/bodrum_kat/8_suit_yatak_odasi/img_03.png", "images/bodrum_kat/8_suit_yatak_odasi/img_04.png", "images/bodrum_kat/8_suit_yatak_odasi/img_05.jpg", "images/bodrum_kat/8_suit_yatak_odasi/img_06.png"], "subs": [{"slug": "banyo", "name_tr": "Bathroom", "images": ["images/bodrum_kat/8_suit_yatak_odasi/banyo/img_01.png", "images/bodrum_kat/8_suit_yatak_odasi/banyo/img_02.png"]}], "beacon": {"x": 0.79, "y": 0.7639}}, {"slug": "bodrum_kat__9_erkek_odasi", "num": "09", "name_tr": "Boy's Room", "floor": 0, "plan": "images/bodrum_kat/9_erkek_odasi/plan.jpg", "images": ["images/bodrum_kat/9_erkek_odasi/img_01.png", "images/bodrum_kat/9_erkek_odasi/img_02.png"], "subs": [{"slug": "banyo", "name_tr": "Bathroom", "images": ["images/bodrum_kat/9_erkek_odasi/banyo/img_01.png", "images/bodrum_kat/9_erkek_odasi/banyo/img_02.png"]}], "beacon": {"x": 0.4575, "y": 0.2119}}, {"slug": "bodrum_kat__11_depo_ve_camasir_odasi", "num": "10", "name_tr": "Storage & Laundry Room", "floor": 0, "plan": "images/bodrum_kat/11_depo_ve_camasir_odasi/plan.jpg", "images": ["images/bodrum_kat/11_depo_ve_camasir_odasi/img_01.png", "images/bodrum_kat/11_depo_ve_camasir_odasi/img_02.jpeg", "images/bodrum_kat/11_depo_ve_camasir_odasi/img_03.png", "images/bodrum_kat/11_depo_ve_camasir_odasi/img_04.png"], "subs": [], "beacon": {"x": 0.225, "y": 0.587}}, {"slug": "bodrum_kat__12_yardimci_odasi", "num": "11", "name_tr": "Housekeeper's Room", "floor": 0, "plan": "images/bodrum_kat/12_yardimci_odasi/plan.jpg", "images": ["images/bodrum_kat/12_yardimci_odasi/img_01.png", "images/bodrum_kat/12_yardimci_odasi/img_02.png"], "subs": [{"slug": "banyo", "name_tr": "Bathroom", "images": ["images/bodrum_kat/12_yardimci_odasi/banyo/img_01.png", "images/bodrum_kat/12_yardimci_odasi/banyo/img_02.jpg"]}], "beacon": {"x": 0.225, "y": 0.2473}}, {"slug": "zemin_kat__13_salon", "num": "12", "name_tr": "Living Room", "floor": 1, "plan": "images/zemin_kat/13_salon/plan.jpg", "images": ["images/zemin_kat/13_salon/img_01.png", "images/zemin_kat/13_salon/img_02.png", "images/zemin_kat/13_salon/img_03.png", "images/zemin_kat/13_salon/img_04.png"], "subs": [], "beacon": {"x": 0.68, "y": 0.6224}}, {"slug": "zemin_kat__14_misafir_yatak_odasi", "num": "13", "name_tr": "Guest Bedroom", "floor": 1, "plan": "images/zemin_kat/14_misafir_yatak_odasi/plan.jpg", "images": ["images/zemin_kat/14_misafir_yatak_odasi/img_01.png", "images/zemin_kat/14_misafir_yatak_odasi/img_02.jpeg"], "subs": [], "beacon": {"x": 0.2525, "y": 0.3818}}, {"slug": "1_kat__15_kiz_cocuk_odasi", "num": "14", "name_tr": "Girl's Bedroom", "floor": 2, "plan": "images/1_kat/15_kiz_cocuk_odasi/plan.jpg", "images": ["images/1_kat/15_kiz_cocuk_odasi/img_01.png", "images/1_kat/15_kiz_cocuk_odasi/img_02.png"], "subs": [], "beacon": {"x": 0.1825, "y": 0.3889}}, {"slug": "1_kat__16_erkek_cocuk_odasi", "num": "15", "name_tr": "Boy's Bedroom", "floor": 2, "plan": "images/1_kat/16_erkek_cocuk_odasi/plan.jpg", "images": ["images/1_kat/16_erkek_cocuk_odasi/img_01.png", "images/1_kat/16_erkek_cocuk_odasi/img_02.png"], "subs": [], "beacon": {"x": 0.4, "y": 0.3039}}, {"slug": "1_kat__17_ebeveyn_yatak_odasi", "num": "16", "name_tr": "Master Bedroom", "floor": 2, "plan": "images/1_kat/17_ebeveyn_yatak_odasi/plan.jpg", "images": ["images/1_kat/17_ebeveyn_yatak_odasi/img_01.png", "images/1_kat/17_ebeveyn_yatak_odasi/img_02.jpeg", "images/1_kat/17_ebeveyn_yatak_odasi/img_03.jpeg"], "subs": [], "beacon": {"x": 0.645, "y": 0.403}}, {"slug": "1_kat__18_2_li_kiz_cocuk_odasi", "num": "17", "name_tr": "Twin Girls' Bedroom", "floor": 2, "plan": "images/1_kat/18_2_li_kiz_cocuk_odasi/plan.jpg", "images": ["images/1_kat/18_2_li_kiz_cocuk_odasi/img_01.png", "images/1_kat/18_2_li_kiz_cocuk_odasi/img_02.jpeg"], "subs": [], "beacon": {"x": 0.77, "y": 0.7639}}, {"slug": "1_kat__19_merdiven_nisli_duvar", "num": "18", "name_tr": "Staircase Niche Wall", "floor": 2, "plan": null, "images": ["images/1_kat/19_merdiven_nisli_duvar/img_01.jpeg"], "subs": [], "beacon": {"x": 0.31, "y": 0.863}}];
 
 let currentRoom = null;
 let currentSubKey = null;
@@ -773,7 +773,7 @@ function init() {
   setupModalEvents();
   setupLightbox();
   document.getElementById('indexMeta').textContent =
-    DATA.length + ' Mekan · Görsel Dizin';
+    DATA.length + ' Spaces · Visual Index';
 }
 
 /* ---------- PLAN SLIDER ---------- */
@@ -789,7 +789,7 @@ function buildPlanSlider() {
     const img = document.createElement('img');
     img.className = 'plan-img';
     img.src = floor.plan;
-    img.alt = floor.name + ' planı';
+    img.alt = floor.name + ' plan';
     const hotspots = document.createElement('div');
     hotspots.className = 'hotspots';
     DATA.filter(r => r.floor === fIdx && r.beacon).forEach(room => {
@@ -845,7 +845,7 @@ function goFloor(idx) {
 function updateFloorLabel() {
   const label = document.getElementById('planFloorLabel');
   if (!FLOORS.length) { label.textContent = ''; return; }
-  label.innerHTML = '<span>KAT ' + (activeFloor + 1) + ' / ' + FLOORS.length +
+  label.innerHTML = '<span>FLOOR ' + (activeFloor + 1) + ' / ' + FLOORS.length +
     '</span>' + FLOORS[activeFloor].name;
 }
 
@@ -870,8 +870,8 @@ function buildRoomGrid() {
         '<div class="room-card-num">' + room.num + '</div>' +
         '<div class="room-card-name">' + room.name_tr + '</div>' +
         '<div class="room-card-meta">' +
-          '<span><strong>' + totalImgs + '</strong> Görsel</span>' +
-          (subCount > 0 ? '<span><strong>' + (subCount + 1) + '</strong> Alan</span>' : '') +
+          '<span><strong>' + totalImgs + '</strong> Images</span>' +
+          (subCount > 0 ? '<span><strong>' + (subCount + 1) + '</strong> Areas</span>' : '') +
         '</div>' +
         '<div class="room-card-arrow">→</div>' +
       '</div>';
@@ -914,7 +914,7 @@ function closeModal() {
 
 function renderModal() {
   if (!currentRoom) return;
-  document.getElementById('modalEyebrow').textContent = 'MEKAN ' + (currentRoom.num || '');
+  document.getElementById('modalEyebrow').textContent = 'SPACE ' + (currentRoom.num || '');
   document.getElementById('modalTitle').textContent = currentRoom.name_tr;
 
   const planWrap = document.getElementById('modalPlanWrap');
